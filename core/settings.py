@@ -4,7 +4,7 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 import os
-from decouple import config
+# from decouple import config
 from unipath import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -12,14 +12,14 @@ BASE_DIR = Path(__file__).parent
 CORE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY', default='S#perS3crEt_1122')
+SECRET_KEY = os.environ.get('SECRET_KEY', default='S#perS3crEt_1122')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=True, cast=bool)
-
+# DEBUG = os.environ.get('DEBUG', default=True, cast=bool)
+DEBUG = os.environ.get('DEBUG', default=True)
 # load production server from .env
-ALLOWED_HOSTS        = ['localhost', 'localhost:85', '127.0.0.1', config('SERVER', default='127.0.0.1')]
-CSRF_TRUSTED_ORIGINS = ['http://localhost:85', 'http://127.0.0.1', 'https://' + config('SERVER', default='127.0.0.1')]
+ALLOWED_HOSTS = ['localhost', 'localhost:85', '127.0.0.1', os.environ.get('SERVER', default='127.0.0.1')]
+CSRF_TRUSTED_ORIGINS = ['http://localhost:85', 'http://127.0.0.1', 'https://' + os.environ.get('SERVER', default='127.0.0.1')]
 
 # Application definition
 
@@ -120,7 +120,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(CORE_DIR, 'apps/static'),
 )
-
 
 #############################################################
 #############################################################
