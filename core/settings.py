@@ -18,7 +18,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='S#perS3crEt_1122')
 # DEBUG = os.environ.get('DEBUG', default=True, cast=bool)
 DEBUG = os.environ.get('DEBUG', default=True)
 # load production server from .env
-ALLOWED_HOSTS = ['localhost', 'localhost:85', '127.0.0.1', os.environ.get('SERVER', default='127.0.0.1')]
+ALLOWED_HOSTS = ['localhost', 'localhost:85', 'hepudash.herokuapp.com','127.0.0.1', os.environ.get('SERVER', default='127.0.0.1')]
 CSRF_TRUSTED_ORIGINS = ['http://localhost:85', 'http://127.0.0.1', 'https://' + os.environ.get('SERVER', default='127.0.0.1')]
 
 # Application definition
