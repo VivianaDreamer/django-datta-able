@@ -12,3 +12,6 @@ Unipath==1.1
 whitenoise==6.0.0
 psycopg2-binary==2.9.3
 decouple~=0.0.7
+
+numpy==1.22.3
+matplotlib~=3.5.1
